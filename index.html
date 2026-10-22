@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WORLDSTORY — Synthwave Documentary Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09051a;--card:#150c33;--field:#0d0722;--line:#3a2a73;--text:#efeaff;--mute:#a79bd0;--cy:#4fe3ff;--pk:#ff4fd8;--pu:#c23cf2;--gold:#ffd27a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:linear-gradient(180deg,#1b0d45 0,var(--bg) 420px) no-repeat,var(--bg);color:var(--text);font:15px/1.55 Prompt,"Noto Sans Thai",Sarabun,system-ui,sans-serif}
+main{max-width:640px;margin:0 auto;padding:18px 14px 56px}
+.hero{text-align:center;padding:12px 0 8px}
+.spark{color:var(--pk);font-size:22px}
+h1{font-size:34px;letter-spacing:.12em;margin:2px 0;background:linear-gradient(90deg,var(--cy),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:var(--cy);font-size:12px;letter-spacing:.16em}
+.ver{display:inline-block;margin:8px 0;font-size:11.5px;color:var(--pk);border:1px solid #6b2a73;border-radius:99px;padding:2px 10px;letter-spacing:.1em}
+.sub{font-size:12px;color:var(--mute);letter-spacing:.14em}
+h2.big{font-size:24px;line-height:1.3;margin:14px 0 8px}
+.lead{color:var(--mute);font-size:14px;margin:0 0 14px}
+.story{background:linear-gradient(135deg,#2b1263,#4a1573 60%,#7a1a86);border:1px solid #6a3ab8;border-radius:20px;padding:16px;margin:14px 0;box-shadow:0 0 30px #8a2be233}
+.story small{color:var(--cy);letter-spacing:.14em;font-size:11px}
+.story b.t{display:block;font-size:26px;margin:2px 0}
+.story em{display:block;font-style:normal;color:#e4d9ff;font-size:13.5px;margin-top:6px}
+.story .globe{font-size:34px;float:right}
+section.card{background:linear-gradient(180deg,#1a0f3d,var(--card));border:1px solid var(--line);border-radius:20px;padding:16px;margin:0 0 16px}
+h3{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin:0 0 4px;font-size:18px}
+h3 button{font-size:12px;padding:5px 12px}
+.note{color:var(--mute);font-size:12.5px;margin:0 0 6px}
+.step{color:var(--cy);font-size:12.5px;letter-spacing:.06em;margin:16px 0 4px;font-weight:600}
+label.f{display:block;font-size:13px;color:#cfc4f5;margin:12px 0 5px}
+select,input[type=text],textarea{width:100%;background:var(--field);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;font-size:14px;text-overflow:ellipsis}
+textarea{min-height:76px;resize:vertical}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--cy);box-shadow:0 0 0 2px #4fe3ff33}
+::placeholder{color:#6a5d99}
+.sw{display:flex;align-items:center;gap:12px;justify-content:space-between;background:#10082a;border:1px solid var(--line);border-radius:13px;padding:10px 12px;margin:8px 0;cursor:pointer}
+.sw b{display:block;font-size:14px}
+.sw span{display:block;color:var(--mute);font-size:12px}
+.sw input{position:absolute;opacity:0;pointer-events:none}
+.sw i{flex:none;width:44px;height:26px;border-radius:99px;background:#3a2f66;position:relative;transition:.2s}
+.sw i::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s}
+.sw input:checked+i{background:linear-gradient(90deg,var(--pu),var(--pk))}
+.sw input:checked+i::after{left:21px}
+.sw input:focus-visible+i{outline:2px solid var(--cy);outline-offset:2px}
+.btns{display:flex;gap:10px;margin:16px 0 8px}
+button{font:inherit;font-weight:600;font-size:14px;border-radius:12px;padding:11px 14px;cursor:pointer;border:1px solid var(--line);background:#1d1245;color:var(--text)}
+button.pri{background:linear-gradient(90deg,var(--pu),var(--pk));border:0;color:#fff;flex:1.4}
+button:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.empty{text-align:center;padding:28px 10px;color:var(--mute)}
+.empty .s{font-size:30px;color:var(--pk)}
+.empty b{display:block;color:var(--text);margin:6px 0 4px}
+.rc{background:#10082a;border:1px solid var(--line);border-radius:16px;padding:14px;margin:12px 0}
+.rc .h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.rc .h b{font-size:15px}
+.rc .h span{font-size:11px;letter-spacing:.1em;color:var(--cy)}
+.rc.m{border-color:#6a3ab8}
+.rc pre,.rc p{margin:0;white-space:pre-wrap;word-break:break-word;font:inherit;font-size:13.5px;color:#ddd3fb}
+.rc dl{margin:0}
+.rc dt{color:var(--gold);font-size:12.5px;margin-top:9px;font-weight:600}
+.rc dd{margin:2px 0 0;font-size:13.5px;color:#ddd3fb;white-space:pre-wrap;word-break:break-word}
+.rc .en{font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#c8bdf0}
+.rc button{margin-top:10px;padding:7px 12px;font-size:12.5px}
+footer{text-align:center;color:var(--mute);font-size:12px;margin-top:18px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--pk);color:#1a0420;padding:9px 18px;border-radius:99px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+</style>
+</head>
+<body>
+<main>
+<div class="hero">
+<div class="spark">✦</div>
+<h1>WORLDSTORY</h1>
+<div class="tag">DOCUMENTARY PROMPT STUDIO · คลังเรื่องเล่ารอบโลก</div>
+<div class="ver">● CREATIVE STUDIO / v1.0</div>
+<div class="sub">Explore · Imagine · Understand</div>
+<h2 class="big">เปลี่ยนความรู้รอบโลก ให้กลายเป็นสารคดีที่น่าทึ่ง</h2>
+<p class="lead">สร้างพรอมป์ต์สารคดีพร้อมฉาก ซีน มุมกล้อง แสง เสียง และบรรยากาศภาพยนตร์ ปรับแต่งได้ทุกส่วนในที่เดียว</p>
+</div>
+<div class="story"><span class="globe">🌍</span><small>STORY BUILDER</small><b class="t">Scene by scene <small style="color:var(--pk)">✦ AI-ready</small></b><em>“ทุกสถานที่มีเรื่องราว ทุกความรู้เปิดประตูสู่จินตนาการ”</em><em style="color:var(--cy)">✧ สร้างแนวคิด · วางภาพ · เล่าเรื่อง</em></div>
+
+<section class="card" id="cfg">
+<h3><span>⚙️ ตั้งค่าการสร้างสารคดี</span><button id="reset">รีเซ็ต</button></h3>
+<p class="note">เลือกหัวข้อและกำหนดภาพในแบบของคุณ</p>
+<div id="form"></div>
+<p class="note" style="margin-top:12px">หมายเหตุ: เครื่องมือนี้สร้างพรอมป์ต์และโครงเรื่องในเบราว์เซอร์ ไม่ได้สร้างวิดีโอหรือยืนยันข้อเท็จจริงจากอินเทอร์เน็ตโดยอัตโนมัติ ควรตรวจสอบข้อมูลก่อนเผยแพร่</p>
+<div class="btns"><button class="pri" id="gen">✦ สร้างสารคดีและแบ่งซีน</button><button id="rnd">⤨ สุ่มไอเดีย</button></div>
+</section>
+
+<section class="card" id="res">
+<h3><span>🎬 ผลลัพธ์สตูดิโอ</span><button id="copyAll">คัดลอกทั้งหมด</button></h3>
+<p class="note">โครงเรื่อง + พรอมป์ต์แยกซีน พร้อมนำไปใช้ต่อ</p>
+<div id="out"><div class="empty"><div class="s">✧</div><b>เรื่องราวของคุณกำลังรอการค้นพบ</b>ตั้งค่าด้านบน แล้วกด “สร้างสารคดีและแบ่งซีน”</div></div>
+</section>
+<footer>WORLDSTORY · ทำงานในเบราว์เซอร์ของคุณ · ใช้ได้ทั้งมือถือและคอมพิวเตอร์</footer>
+</main>
+<div id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const S=(id,l,o,d)=>({t:"s",id,l,o,d});
+const T=(id,l,ph)=>({t:"t",id,l,ph});
+const A=(id,l,ph,d)=>({t:"a",id,l,ph,d:d||""});
+const W=(id,ic,l,sub)=>({t:"w",id,ic,l,sub});
+const SEC=[
+["01 / หัวข้อและรูปแบบ",[
+A("topic","หัวข้อสารคดี / สิ่งที่อยากให้คนดูได้เรียนรู้","เช่น ความลับของมหาสมุทรลึก","ความลับของมหาสมุทรลึกและสิ่งมีชีวิตเรืองแสง"),
+S("cat","หมวดความรู้",["ธรรมชาติและสัตว์ป่า","วิทยาศาสตร์และอวกาศ","ประวัติศาสตร์และอารยธรรม","ภูมิศาสตร์และสถานที่มหัศจรรย์","เทคโนโลยีและนวัตกรรม","วัฒนธรรมและวิถีชีวิต","โลกอนาคตและจินตนาการเชิงวิทยาศาสตร์","ความรู้ทั่วไปแบบรอบโลก"]),
+S("fmt","รูปแบบสารคดี",["สารคดีภาพยนตร์ระดับโลก","สารคดีสำรวจ / Expedition","สารคดีเชิงข่าวและข้อเท็จจริง","สารคดีธรรมชาติแบบ cinematic","สารคดีลึกลับชวนค้นหา","สารคดีสำหรับครอบครัว","สารคดีสั้นสำหรับโซเชียล"]),
+S("len","ความยาวโดยประมาณ",["30–60 วินาที","1–3 นาที","5–8 นาที","10–15 นาที","20–30 นาที"],"5–8 นาที"),
+S("aud","กลุ่มผู้ชม",["ผู้ชมทั่วไป","เด็กและเยาวชน","นักเรียน / นักศึกษา","ผู้สนใจเชิงลึก","ผู้ชมทั่วโลก"]),
+S("lang","ภาษาบรรยาย",["ภาษาไทย","ภาษาอังกฤษ","ไทยพร้อมคำบรรยายอังกฤษ","ไม่มีเสียงพูด เน้นภาพและเสียงธรรมชาติ"])]],
+["02 / โลกภาพและบรรยากาศ",[
+S("style","สไตล์ภาพ",["สมจริงระดับภาพยนตร์ 8K","สารคดีธรรมชาติ National Geographic","แฟนตาซีเหนือจินตนาการแต่สมจริง","ภาพยนตร์ไซไฟล้ำอนาคต","แอนิเมชัน 3D คุณภาพสูง","ภาพวาดสารคดีเชิงศิลป์","ฟุตเทจกล้องสำรวจจริง"]),
+S("mood","อารมณ์ภาพ",["น่าพิศวง ยิ่งใหญ่ ชวนค้นหา","สงบ อบอุ่น และสร้างแรงบันดาลใจ","ลึกลับ ตื่นเต้น กดดัน","สดใส สนุก เข้าใจง่าย","ยิ่งใหญ่แบบมหากาพย์","สมจริง สุขุม และน่าเชื่อถือ"]),
+S("ratio","อัตราส่วนภาพ",["16:9 แนวนอน","9:16 แนวตั้ง","1:1 จัตุรัส","2.39:1 Cinematic"]),
+S("q","คุณภาพภาพ",["4K UHD","8K Ultra Detail","Photorealistic HDR","เหมาะกับมือถือ"],"8K Ultra Detail"),
+S("n","จำนวนซีน",["3","4","5","6","8","10"],"5"),
+T("place","สถานที่ / ฉากหลัก (ปล่อยว่างเพื่อให้ระบบคิดให้)","เช่น ป่าเมฆบนยอดเขา / ใต้ทะเลลึก"),
+A("focus","สิ่งที่ต้องการเน้นเป็นพิเศษ","เช่น สัตว์หายาก รายละเอียดทางวิทยาศาสตร์ ฉากเปิดที่น่าตื่นตาตื่นใจ")]],
+["03 / สวิตช์ควบคุมองค์ประกอบ",[
+W("sNar","🎙️","เสียงบรรยาย / ผู้เล่าเรื่อง","ใส่บทบรรยายให้ความรู้และชวนติดตาม"),
+W("sFact","📚","ข้อเท็จจริงและเกร็ดความรู้","ระบุประเด็นความรู้และหลีกเลี่ยงการแต่งข้อเท็จจริง"),
+W("sCam","🎥","มุมกล้องเคลื่อนไหว","โดรน, tracking, macro, slow motion, orbit"),
+W("sLit","💡","แสงและเอฟเฟกต์บรรยากาศ","Volumetric light, หมอก, ฝุ่นละออง, แสงสะท้อน"),
+W("sMus","🎼","ดนตรีและเสียงประกอบ","ออกแบบ soundscape ให้เข้ากับอารมณ์"),
+W("sImg","✨","จินตนาการเชิงภาพ","ภาพเหนือจริงที่ยังแยกจากข้อเท็จจริงได้ชัดเจน"),
+W("sNeg","🚫","Negative prompt","ลดภาพเบลอ ภาพผิดรูป และรายละเอียดไม่พึงประสงค์")]]];
+const ALL=SEC.flatMap(s=>s[1]);
+$("#form").innerHTML=SEC.map(s=>`<div class="step">${s[0]}</div>`+s[1].map(f=>{
+ if(f.t==="w")return `<label class="sw"><div><b>${f.ic} ${f.l}</b><span>${f.sub}</span></div><input type="checkbox" id="${f.id}"><i></i></label>`;
+ let h=`<label class="f" for="${f.id}">${f.l}</label>`;
+ if(f.t==="s")h+=`<select id="${f.id}">${f.o.map(o=>`<option>${esc(o)}</option>`).join("")}</select>`;
+ else if(f.t==="t")h+=`<input type="text" id="${f.id}" placeholder="${esc(f.ph)}">`;
+ else h+=`<textarea id="${f.id}" placeholder="${esc(f.ph)}"></textarea>`;
+ return h}).join("")).join("");
+function defaults(){ALL.forEach(f=>{const e=$("#"+f.id);if(f.t==="w")e.checked=true;else if(f.t==="s")e.value=f.d||f.o[0];else e.value=f.d||""})}
+defaults();
+const v=id=>$("#"+id).value.trim(),on=id=>$("#"+id).checked;
+const BEATS=[
+["เปิดโลกใบนี้","ดึงความสนใจในไม่กี่วินาทีแรกด้วยภาพกว้างตระการตา","wide establishing shot revealing the scale and beauty of the subject","ทุกการค้นพบเริ่มต้นจากคำถามเดียว… “{t}” คืออะไรกันแน่","สลายภาพจากความมืดสู่แสงแรก (fade in)"],
+["พาผู้ชมเข้าใกล้","นำผู้ชมจากภาพรวมเข้าสู่รายละเอียดของหัวข้อ","slow push-in from wide to medium, guiding the viewer closer to the subject","เมื่อเข้าใกล้มากขึ้น เราจึงเริ่มเห็นรายละเอียดที่ภาพรวมซ่อนไว้","Match cut ต่อจากองค์ประกอบเดิม"],
+["ความลับที่ซ่อนอยู่","เปิดเผยข้อเท็จจริงน่าทึ่งข้อแรก","intimate reveal shot highlighting a surprising detail, shallow depth of field","สิ่งที่ซ่อนอยู่ตรงนี้ เป็นหนึ่งในความลับสำคัญของ “{t}”","Whip pan หรือเปลี่ยนโฟกัสไปยังรายละเอียดใหม่"],
+["รายละเอียดที่มองไม่เห็นด้วยตาเปล่า","ขยายภาพให้เห็นโครงสร้างหรือกลไกเล็ก ๆ","extreme macro close-up revealing fine structure and texture","ในระดับที่ตาเปล่ามองไม่เห็น มีโลกอีกใบกำลังทำงานอยู่","Macro-to-wide transition"],
+["ความท้าทายและความเสี่ยง","แสดงแรงกดดันหรืออุปสรรคที่เกี่ยวข้องกับหัวข้อ","dramatic low-angle shot conveying challenge and tension","ทุกความมหัศจรรย์ย่อมมีความท้าทายที่ต้องเผชิญ","Hard cut พร้อมเสียงเปลี่ยนจังหวะ"],
+["วิทยาศาสตร์เบื้องหลัง","อธิบายหลักการหรือหลักฐานอย่างเข้าใจง่าย","clean explanatory visuals, diagram-like composition integrated into the scene","เบื้องหลังภาพเหล่านี้คือหลักการที่นักวิทยาศาสตร์ศึกษามาหลายปี","Dissolve ผสมภาพประกอบกราฟิกเบา ๆ"],
+["จุดสูงสุดแห่งการค้นพบ","ภาพที่ยิ่งใหญ่ที่สุดของเรื่อง","epic hero shot at peak intensity, sweeping orbit with dramatic light","และแล้วช่วงเวลาที่ยิ่งใหญ่ที่สุดก็มาถึง","Slow-motion transition ส่งต่อไปสู่บทสรุป"],
+["มุมมองจากอดีตถึงอนาคต","เชื่อมเวลาเพื่อให้เห็นภาพใหญ่","time-lapse or layered montage linking past, present and future","จากอดีตสู่ปัจจุบัน เรื่องราวนี้ยังคงเปลี่ยนแปลงต่อไป","Cross dissolve แบบไทม์แลปส์"],
+["เชื่อมโยงกับโลกของเรา","ทำให้ผู้ชมเห็นว่าเรื่องนี้เกี่ยวข้องกับชีวิตจริง","human-scale shot connecting the subject to everyday life, warm natural light","สิ่งนี้อาจดูไกลตัว แต่แท้จริงแล้วเชื่อมโยงกับเราทุกคน","Soft cut พร้อมเสียงบรรยากาศใกล้ตัว"],
+["คำถามที่ปลายทาง","ปิดเรื่องด้วยแรงบันดาลใจและคำถามชวนคิด","pulling-back final shot with a contemplative mood, fade to black","และคำถามที่ยังไม่มีคำตอบ… จะนำพาเราไปสู่การค้นพบครั้งต่อไป","Fade to black พร้อมเสียงดนตรีค่อยจางหาย"]];
+const PICK={3:[0,6,8],4:[0,1,6,8],5:[0,1,2,6,8],6:[0,1,2,3,6,8],8:[0,1,2,3,4,5,6,8],10:[0,1,2,3,4,5,6,7,8,9]};
+const MUS={"น่าพิศวง":"synth pads and soft choir","สงบ":"gentle piano and ambient textures","ลึกลับ":"low drones and sparse pulses","สดใส":"light, playful melody","ยิ่งใหญ่":"epic orchestral with deep percussion","สมจริง":"minimal natural ambience"};
+function musicFor(m){for(const k in MUS)if(m.includes(k))return MUS[k];return "cinematic ambient score"}
+let data=null;
+function build(){
+ const t=v("topic")||"หัวข้อรอบโลกที่น่าทึ่ง",place=v("place")||"ให้ระบบเลือกสถานที่ที่เหมาะกับเรื่อง",n=+v("n"),idx=PICK[n]||PICK[5];
+ const mus=musicFor(v("mood")),aspect=v("ratio").split(" ")[0];
+ const head=[
+ `หัวข้อ: ${t}`,`หมวดความรู้: ${v("cat")}`,`รูปแบบ: ${v("fmt")}`,`ความยาว: ${v("len")} • กลุ่มผู้ชม: ${v("aud")}`,`ภาษาบรรยาย: ${v("lang")}`,
+ `สไตล์ภาพ: ${v("style")} • อารมณ์: ${v("mood")}`,`อัตราส่วน: ${v("ratio")} • คุณภาพ: ${v("q")}`,`สถานที่หลัก: ${place}`,`จำนวนซีน: ${n}`];
+ if(v("focus"))head.push(`สิ่งที่เน้นเป็นพิเศษ: ${v("focus")}`);
+ const tips=[];
+ if(on("sFact"))tips.push("ข้อเท็จจริง: ระบุเฉพาะประเด็นความรู้ที่ตรวจสอบได้ ห้ามแต่งตัวเลขหรือเหตุการณ์ หากไม่แน่ใจให้ทำเครื่องหมาย [ตรวจสอบ]");
+ if(on("sNar"))tips.push(`เสียงบรรยาย: เล่าเรื่องด้วยน้ำเสียงชวนติดตาม ${v("lang")}`);
+ if(on("sCam"))tips.push("กล้อง: ใช้โดรน tracking macro slow motion และ orbit ตามความเหมาะสมของแต่ละซีน");
+ if(on("sLit"))tips.push("แสงและบรรยากาศ: volumetric light หมอก ฝุ่นละออง และแสงสะท้อน");
+ if(on("sMus"))tips.push(`เสียงประกอบ: ออกแบบ soundscape สไตล์ ${mus}`);
+ if(on("sImg"))tips.push("จินตนาการเชิงภาพ: ใช้ภาพเหนือจริงได้ แต่ต้องแยกจากข้อเท็จจริงให้ชัดเจน");
+ if(on("sNeg"))tips.push("Negative prompt: blurry, low resolution, distorted anatomy, extra limbs, text, watermark, logo");
+ const neg="blurry, low resolution, distorted anatomy, extra limbs, text, watermark, logo";
+ const scenes=idx.slice(0,n).map((bi,i)=>{const b=BEATS[bi];
+  const en=`Scene ${i+1}/${n} — ${b[0]}: documentary about "${t}", ${v("cat")}. ${b[2]}. Location: ${place}. Style: ${v("style")}; mood: ${v("mood")}; ${v("q")}, ${aspect}${on("sCam")?"; dynamic cinematography (drone, tracking, macro, slow motion, orbit)":""}${on("sLit")?"; volumetric light, atmospheric haze, floating particles, natural reflections":""}${on("sImg")?"; surreal visual imagination kept visually distinct from factual elements":""}${v("focus")?"; emphasis: "+v("focus"):""}${on("sNeg")?". Avoid: "+neg:""}`;
+  return{no:i+1,title:b[0],goal:b[1],visual:b[2],narr:on("sNar")?b[3].replace("{t}",t):"",sound:on("sMus")?`${mus}; ambient layers matching ${v("mood")}`:"",trans:b[4],fact:on("sFact")?"ตรวจสอบข้อเท็จจริงของประเด็นในซีนนี้จากแหล่งที่เชื่อถือได้ก่อนเผยแพร่":"",en}});
+ const master=`Create a ${v("fmt")} documentary of ${v("len")} about "${t}" for ${v("aud")}. Style: ${v("style")}, ${v("mood")}. Format: ${v("ratio")}, ${v("q")}. ${n} scenes, location: ${place}. Narration language: ${v("lang")}.${v("focus")?" Emphasize: "+v("focus")+".":""}${on("sFact")?" Use only verifiable facts; do not invent details.":""}${on("sNeg")?" Avoid: "+neg+".":""}`;
+ return{head,tips,scenes,master}}
+function sceneText(s){return `ซีน ${String(s.no).padStart(2,"0")} · ${s.title}\nเป้าหมาย: ${s.goal}\nภาพและองค์ประกอบ: ${s.visual}\n${s.narr?"บทบรรยาย: "+s.narr+"\n":""}${s.sound?"เสียง: "+s.sound+"\n":""}การเปลี่ยนผ่าน: ${s.trans}\n${s.fact?"ข้อเท็จจริง: "+s.fact+"\n":""}Prompt: ${s.en}`}
+function fullText(){if(!data)return"";return `ภาพรวมโปรเจกต์ (MASTER PROMPT)\n${data.head.join("\n")}${data.tips.length?"\n\nแนวทางเพิ่มเติม\n• "+data.tips.join("\n• "):""}\n\n${data.scenes.map(sceneText).join("\n\n")}\n\nพรอมป์ต์ฉบับรวม\n${data.master}`}
+function render(){
+ const d=data;
+ $("#out").innerHTML=`<div class="rc m"><div class="h"><b>✦ ภาพรวมโปรเจกต์</b><span>MASTER PROMPT</span></div><pre>${esc(d.head.join("\n"))}${d.tips.length?"\n\nแนวทางเพิ่มเติม\n• "+esc(d.tips.join("\n• ")):""}</pre><button data-c="head">คัดลอกภาพรวม</button></div>`+
+ d.scenes.map((s,i)=>`<div class="rc"><div class="h"><b>ซีน ${String(s.no).padStart(2,"0")} · ${esc(s.title)}</b><span>SCENE ${String(s.no).padStart(2,"0")}</span></div><dl><dt>เป้าหมาย</dt><dd>${esc(s.goal)}</dd><dt>ภาพและองค์ประกอบ</dt><dd>${esc(s.visual)}</dd>${s.narr?`<dt>บทบรรยาย</dt><dd>${esc(s.narr)}</dd>`:""}${s.sound?`<dt>เสียง</dt><dd>${esc(s.sound)}</dd>`:""}<dt>การเปลี่ยนผ่าน</dt><dd>${esc(s.trans)}</dd>${s.fact?`<dt>ข้อเท็จจริง</dt><dd>${esc(s.fact)}</dd>`:""}<dt>Prompt</dt><dd class="en">${esc(s.en)}</dd></dl><button data-s="${i}">คัดลอกซีนนี้</button></div>`).join("")+
+ `<div class="rc m"><div class="h"><b>พรอมป์ต์ฉบับรวม</b><span>ALL-IN-ONE</span></div><p class="en">${esc(d.master)}</p><button data-c="master">คัดลอกพรอมป์ต์รวม</button></div>`}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),1700)}
+async function copy(t,m){if(!t){toast("กดสร้างก่อน");return}let ok=false;try{await navigator.clipboard.writeText(t);ok=true}catch(e){const a=document.createElement("textarea");a.value=t;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{ok=document.execCommand("copy")}catch(x){}a.remove()}toast(ok?(m||"คัดลอกแล้ว"):"คัดลอกไม่สำเร็จ")}
+$("#gen").onclick=()=>{data=build();render();$("#res").scrollIntoView({behavior:"smooth"});toast("สร้างสารคดีแล้ว")};
+$("#copyAll").onclick=()=>copy(fullText());
+$("#out").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||!data)return;
+ if(b.dataset.s!=null)copy(sceneText(data.scenes[+b.dataset.s]),"คัดลอกซีนแล้ว");
+ else if(b.dataset.c==="master")copy(data.master);
+ else if(b.dataset.c==="head")copy(data.head.join("\n"))});
+$("#reset").onclick=()=>{defaults();data=null;$("#out").innerHTML='<div class="empty"><div class="s">✧</div><b>เรื่องราวของคุณกำลังรอการค้นพบ</b>ตั้งค่าด้านบน แล้วกด “สร้างสารคดีและแบ่งซีน”</div>';toast("รีเซ็ตแล้ว")};
+const IDEAS=[["ความลับของมหาสมุทรลึกและสิ่งมีชีวิตเรืองแสง","ธรรมชาติและสัตว์ป่า"],["การเดินทางของแสงจากดาวฤกษ์สู่ดวงตาเรา","วิทยาศาสตร์และอวกาศ"],["อารยธรรมที่หายไปและร่องรอยที่ยังเหลืออยู่","ประวัติศาสตร์และอารยธรรม"],["ถ้ำและแม่น้ำใต้ดินที่ซ่อนอยู่ใต้ผืนป่า","ภูมิศาสตร์และสถานที่มหัศจรรย์"],["หุ่นยนต์เล็กจิ๋วที่ช่วยรักษาโลก","เทคโนโลยีและนวัตกรรม"],["เส้นทางเครื่องเทศกับวัฒนธรรมการกินของโลก","วัฒนธรรมและวิถีชีวิต"],["เมืองลอยฟ้าในอีก 100 ปีข้างหน้า","โลกอนาคตและจินตนาการเชิงวิทยาศาสตร์"]];
+$("#rnd").onclick=()=>{const p=IDEAS[Math.floor(Math.random()*IDEAS.length)];$("#topic").value=p[0];$("#cat").value=p[1];["fmt","style","mood"].forEach(id=>{const o=ALL.find(f=>f.id===id).o;$("#"+id).value=o[Math.floor(Math.random()*o.length)]});toast("สุ่มไอเดียแล้ว")};
+</script>
+</body>
+</html>
